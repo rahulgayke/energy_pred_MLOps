@@ -26,3 +26,4 @@ Werkzeug==2.0.1
 wincertstore==0.2
 WTForms==2.3.3
 gunicorn
+mlflow
