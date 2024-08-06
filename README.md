@@ -86,3 +86,9 @@ The application is available on the server (port=80).
 ```python train.py```
 
 The train.py file fetches the data (from data folder) and runs machine learning models (curently random forest) and saves the data and parameters in pickle file and joblib format. The models are placed in the models directory.  
+
+## mlflow experiments
+
+use below command to run the experiements:
+for DT model:
+# mlflow run . -P max_depth=5 -Pmin_samples_split=2 --ecperiment-name "DT_Exp_1.0.0"

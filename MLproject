@@ -1,0 +1,10 @@
+name: energy_prediction_group_69
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      max_depth: {type: int, default: 5}
+      min_samples_split: {type: int, default: 2}
+    command: "python train.py --max_depth {max_depth} --min_samples_split {min_samples_split}"
