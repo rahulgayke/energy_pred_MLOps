@@ -91,4 +91,8 @@ The train.py file fetches the data (from data folder) and runs machine learning 
 
 use below command to run the experiements:
 for DT model:
-# mlflow run . -P max_depth=5 -Pmin_samples_split=2 --ecperiment-name "DT_Exp_1.0.0"
+# mlflow run . -P max_depth=5 -Pmin_samples_split=2
+for RF model:
+# mlflow run . -P n_estimators=1000 -P max_depth=5 -Pmin_samples_split=2
+for SVR model:
+# mlflow run . -P kernel='linear' -P C=5 -P gamma='scale' -P epsilon=0.2

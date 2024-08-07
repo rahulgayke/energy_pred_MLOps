@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Rahul%20Data/IMP%20Data/BITS/Semister%203/MLOPS/ASsignment%201/MLOPS_Assignment-1_Grp_69/mlruns/0/2d4937488ab1432ebe3038cd0b29d906/artifacts
+end_time: 1722961876604
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2d4937488ab1432ebe3038cd0b29d906
+run_name: wise-fox-260
+run_uuid: 2d4937488ab1432ebe3038cd0b29d906
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722961849187
+status: 3
+tags: []
+user_id: Rahul's Laptop

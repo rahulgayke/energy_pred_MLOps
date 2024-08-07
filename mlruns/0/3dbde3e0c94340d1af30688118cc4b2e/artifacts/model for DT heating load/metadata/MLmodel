@@ -1,0 +1,20 @@
+artifact_path: model for DT heating load
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.8.19
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.3.0
+mlflow_version: 2.12.2
+model_size_bytes: 5537
+model_uuid: ca9e15bb0b68463b8d53807adb102a99
+run_id: 3dbde3e0c94340d1af30688118cc4b2e
+utc_time_created: '2024-08-06 19:07:20.674357'

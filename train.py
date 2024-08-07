@@ -102,7 +102,7 @@ def train_rf_regressor(scaled_X_train, scaled_y_train_1, scaled_y_train_2, param
 
     # Heating Load
     rf_1 = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, min_samples_split=min_samples_split, random_state=11) #n_estimators = 1000, random_state = 42
-    # rf_random_1 = RandomizedSearchCV(estimator = rf_1, param_distributions = random_grid, n_iter = 100, cv = 10, verbose=2, random_state=42, n_jobs = -1)
+
     rf_1.fit(scaled_X_train, scaled_y_train_1)
 
     # Cooling Load

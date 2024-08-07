@@ -1,0 +1,20 @@
+artifact_path: model for RF heating load
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.8.19
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.3.0
+mlflow_version: 2.12.2
+model_size_bytes: 42239071
+model_uuid: edab49f86cb7429d9160228fdd14035e
+run_id: 1652f0278aeb44bbb8c1bdcdb6866882
+utc_time_created: '2024-08-06 16:35:33.395411'

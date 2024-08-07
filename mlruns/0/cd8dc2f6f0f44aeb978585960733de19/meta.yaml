@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Rahul%20Data/IMP%20Data/BITS/Semister%203/MLOPS/ASsignment%201/MLOPS_Assignment-1_Grp_69/mlruns/0/cd8dc2f6f0f44aeb978585960733de19/artifacts
+end_time: 1722971801378
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cd8dc2f6f0f44aeb978585960733de19
+run_name: treasured-croc-542
+run_uuid: cd8dc2f6f0f44aeb978585960733de19
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722971772355
+status: 3
+tags: []
+user_id: Rahul's Laptop
