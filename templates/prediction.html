@@ -1,14 +1,54 @@
-<h1>Bsaed on this Information:</h1>
-<ul>
-	<li>Relative compactness: {{session['Relative_compactness']}}</li>
-	<li>Surface area:  {{session['Surface_area']}}</li>
-	<li>Wall area: {{session['Wall_area']}}</li>
-	<li>Roof area:  {{session['Roof_area']}}</li>
-	<li>Overall_height:  {{session['Overall_height']}}</li>
-	<li>Orientation:  {{session['Orientation']}}</li>
-	<li>Glazing area:  {{session['Glazing_area']}}</li>
-	<li>Glazing area distribution:  {{session['Glazing_area_distribution']}}</li>
-</ul>
-<h1>The predicted indices are: </h1>
-<h3>Heating Load: {{results[0][0][0]}} </h3>
-<h3>Cooling Load: {{results[1][0][0]}} </h3>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #d9534f;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Based on this Information:</h1>
+    <ul>
+        <li>Relative compactness: <span class="highlight">{{session['Relative_compactness']}}</span></li>
+        <li>Surface area: <span class="highlight">{{session['Surface_area']}}</span></li>
+        <li>Wall area: <span class="highlight">{{session['Wall_area']}}</span></li>
+        <li>Roof area: <span class="highlight">{{session['Roof_area']}}</span></li>
+        <li>Overall height: <span class="highlight">{{session['Overall_height']}}</span></li>
+        <li>Orientation: <span class="highlight">{{session['Orientation']}}</span></li>
+        <li>Glazing area: <span class="highlight">{{session['Glazing_area']}}</span></li>
+        <li>Glazing area distribution: <span class="highlight">{{session['Glazing_area_distribution']}}</span></li>
+    </ul>
+    <h1>The predicted indices are:</h1>
+    <h3>Heating Load: <span class="highlight">{{results[0][0][0]}}</span></h3>
+    <h3>Cooling Load: <span class="highlight">{{results[1][0][0]}}</span></h3>
+</body>
+</html>
