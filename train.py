@@ -153,7 +153,7 @@ def dump_models(heating_model, cooling_model, path_1, path_2):
 # # DECISION TREE
 # def main(max_depth, min_samples_split):
 #     # load the data\
-#     path = "./data/ENB2012_CSV_data.csv"
+#     path = "./ENB2012_CSV_data.csv"
 #     df = load_data(path)
 
 #     # train/test split
@@ -205,7 +205,7 @@ def dump_models(heating_model, cooling_model, path_1, path_2):
 # RANDOM FOREST
 def main(n_estimators, max_depth, min_samples_split):
     # load the data\
-    path = "./data/ENB2012_CSV_data.csv"
+    path = "./ENB2012_CSV_data.csv"
     df = load_data(path)
 
     # train/test split
@@ -259,7 +259,7 @@ def main(n_estimators, max_depth, min_samples_split):
 # # SUPPORT VECTOIR MACHINE
 # def main(kernel, c_val, gamma, epsilon):
 #     # load the data\
-#     path = "./data/ENB2012_CSV_data.csv"
+#     path = "./ENB2012_CSV_data.csv"
 #     df = load_data(path)
 
 #     # train/test split

@@ -1,0 +1,43 @@
+[33mcommit 1d30e70488b087d8996ef8b48cfe3fa654b87807[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mDVC_test_v1[m[33m, [m[1;33mtag: [m[1;33mv.0[m[33m)[m
+Author: Rahul Gayke <rahulsgayke@gmail.com>
+Date:   Wed Aug 7 21:38:54 2024 +0530
+
+    changes for dvc configuration and data
+
+[33mcommit 0145f35037945cfb78fcdb3764c850aa33bfc995[m
+Author: Rahul Gayke <rahulsgayke@gmail.com>
+Date:   Wed Aug 7 21:31:04 2024 +0530
+
+    stop tracking models\scaler_x.pkl
+
+[33mcommit 272099195d239b1c84ac94d815a1b2a19c0bbd02[m
+Author: Rahul Gayke <rahulsgayke@gmail.com>
+Date:   Wed Aug 7 21:28:21 2024 +0530
+
+    stop tracking models\rf_1.joblib
+
+[33mcommit eab0d08f9353fe0240a2312dc21f0f2582a7e04c[m[33m ([m[1;31morigin/ml_flow_dvc_test_v1[m[33m, [m[1;32mml_flow_dvc_test_v1[m[33m)[m
+Author: Rahul Gayke <rahulsgayke@gmail.com>
+Date:   Tue Aug 6 21:34:41 2024 +0530
+
+    mlflow logging coded in train.py and app.py
+
+[33mcommit fb5b282d0da7f87a7e98a1bcaadf77bd9b22a8c2[m
+Author: Rahul Gayke <rahulsgayke@gmail.com>
+Date:   Sun Aug 4 01:00:40 2024 +0530
+
+    updated train.py for mlflow loggings
+
+[33mcommit d7f749a99297ccba74b0e0939af421d0131646fa[m[33m ([m[1;31morigin/M1_v1.1[m[33m, [m[1;32mM1_v1.1[m[33m)[m
+Author: u27t43 <sneha.suman@avl.com>
+Date:   Thu Aug 1 21:15:57 2024 +0530
+
+    Added energy prediction -M1
+
+[33mcommit c1b182e0e2671e50efffdd4c738d15b46246a828[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Sneha123-star <62638204+Sneha123-star@users.noreply.github.com>
+Date:   Thu Aug 1 21:11:10 2024 +0530
+
+    Create README.md
+    
+    added
