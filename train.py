@@ -75,52 +75,45 @@ scaled_y_test_2=scaled_y_test_2.ravel()
 ###############################################################################################################################
 #%% Training the random forest model using RandomizedSearchCV for optimization of parameters
 
-# Number of trees in random forest
-n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
-# Number of features to consider at every split
-max_features = ['auto', 'sqrt']
-# Maximum number of levels in tree
-max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
-max_depth.append(None)
-# Minimum number of samples required to split a node
-min_samples_split = [2, 5, 10]
-# Minimum number of samples required at each leaf node
-min_samples_leaf = [1, 2, 4]
-# Method of selecting samples for training each tree
-bootstrap = [True, False]
-# Create the random grid
-random_grid = {'n_estimators': n_estimators,
-           'max_features': max_features,
-           'max_depth': max_depth,
-           'min_samples_split': min_samples_split,
-           'min_samples_leaf': min_samples_leaf,
-           'bootstrap': bootstrap}
+
+
+
+
+best_random_grid= {'n_estimators': [200,500,700],
+           'max_features': ['auto', 'sqrt'],
+           'max_depth': [20,50,80],
+           'min_samples_split': [2, 5, 10],
+           'min_samples_leaf': [1, 2, 4],
+           'bootstrap': [True, False]}
+
+
+
 
 # Heating Load
 rf_1 = RandomForestRegressor() #n_estimators = 1000, random_state = 42
-rf_random_1 = RandomizedSearchCV(estimator = rf_1, param_distributions = random_grid, n_iter = 100, cv = 10, verbose=2, random_state=42, n_jobs = -1)
-rf_random_1.fit(scaled_X_train, scaled_y_train_1)
-
+best_rf_random_1 = RandomizedSearchCV(estimator = rf_1, param_distributions = best_random_grid, n_iter = 10, cv = 10, verbose=2, random_state=42, n_jobs = -1)
+best_rf_random_1.fit(scaled_X_train, scaled_y_train_1)
 # Cooling Load
 rf_2 = RandomForestRegressor() #n_estimators = 1000, random_state = 42
-rf_random_2 = RandomizedSearchCV(estimator = rf_2, param_distributions = random_grid, n_iter = 100, cv = 10, verbose=2, random_state=42, n_jobs = -1)
-rf_random_2.fit(scaled_X_train, scaled_y_train_2)
+best_rf_random_2 = RandomizedSearchCV(estimator = rf_2, param_distributions = best_random_grid, n_iter = 10, cv = 10, verbose=2, random_state=42, n_jobs = -1)
+best_rf_random_2.fit(scaled_X_train, scaled_y_train_2)
 ###############################################################################################################################
 #%% model evaluation
 
-y_pred1=rf_random_1.predict(scaled_X_test)
-y_pred1=scaler_y1.inverse_transform(y_pred1.reshape(-1, 1))
-y_pred2=rf_random_2.predict(scaled_X_test)
-y_pred2=scaler_y2.inverse_transform(y_pred2.reshape(-1, 1))
+
+best_y_pred1=best_rf_random_1.predict(scaled_X_test)
+best_y_pred1=scaler_y1.inverse_transform(best_y_pred1.reshape(-1, 1))
+best_y_pred2=best_rf_random_2.predict(scaled_X_test)
+best_y_pred2=scaler_y2.inverse_transform(best_y_pred2.reshape(-1, 1))
 ###############################################################################################################################
 #%% print the results of evaluation        
 
 
-print("#### Heating Load Models were trained and tested with average r2 score of {:0.2f} %".format(r2_score(y_test_1,y_pred1)*100))
+
+
+print("#### Heating Load Models were with best parameters trained and tested with average r2 score of {:0.2f} %".format(r2_score(y_test_1,best_y_pred1)*100))
 print("")
-print("#### Cooling Load Models were trained and tested with average r2 score of {:0.2f} %".format(r2_score(y_test_2,y_pred2)*100))
-
-
+print("#### Cooling Load Models were trained  best parameters and tested with average r2 score of {:0.2f} %".format(r2_score(y_test_2,best_y_pred2)*100))
 ###############################################################################################################################
 #%% save the models
 
@@ -129,8 +122,8 @@ joblib.dump(scaler_x,"./models/scaler_x.pkl")
 joblib.dump(scaler_y1,"./models/scaler_y1.pkl")
 joblib.dump(scaler_y2,"./models/scaler_y2.pkl")
 # models
-joblib.dump(rf_random_1, "./models/rf_random_1.joblib")
-joblib.dump(rf_random_2, "./models/rf_random_2.joblib")
+joblib.dump(best_rf_random_1, "./models/rf_random_1.joblib")
+joblib.dump(best_rf_random_2, "./models/rf_random_2.joblib")
 
 
 
