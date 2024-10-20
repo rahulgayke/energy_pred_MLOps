@@ -96,3 +96,49 @@ for RF model:
 # mlflow run . -P n_estimators=1000 -P max_depth=5 -Pmin_samples_split=2
 for SVR model:
 # mlflow run . -P kernel='linear' -P C=5 -P gamma='scale' -P epsilon=0.2
+
+<!-- Steps for MLFLOW: -->
+
+    1. Install mlflow on windows
+    2. Pip install mlflow in mlflow environment
+    3. Import mlflow in train.py
+    4. mlflow.log_param for logging paramteres
+    5. Mlflow.log_metric for logging evaluation metrics
+    6. Mlflow.sklearn.log_model fpor logging model.pkl or model.joblib
+    7. Then write below code in __main__()
+    with mlflow.start_run():
+        Main()
+    8. Use argument parser to get arguments as inputs for main()
+
+
+<!-- Steps for DVC: -->
+
+    1. Go to new repo
+    2. Create new venv
+    3. Pip install -r requirements.txt
+    4. Pip install dvc 
+    5. Dvc init (check if .dvc and .dvcignore files are created)
+    6. Dvc remote list
+    7. Mkdir dvc_storage
+    8. Dvc remote add -d localremote ./dvc_storage
+    9. Then run the model file (train.py) and dump models
+    10. Dvc add ./insurance.csv 
+        (we used dvc add instead of git add as we want dvc to track our data file instead of git, this will add insurance.csv.dvc file in same location)
+    11. Dvc add ./models/model.joblib (do the same for all the required models)
+    12. Dvc push
+        (this will store cached copy of data in remote storage)
+    13. Git add, git commit and git push
+        (to push all the new dvc file to GitHub repo)
+    14. Git tag -a "v1.0" -m "model v1.0 first copy of data"
+    15. Git push --tag
+    16. Now to change the dataset use same file name and replace with older file in the same location with new data and run same steps from 10 to 15 for v2.0
+    17. Git checkout v1.0 
+        (to switch to version v1.0 from current version, this will use all the model artifacts of version v1.0)
+    18. Dvc checkout
+        (use this to use all the dvc files (data and model) for version v1.0)
+    19. Remember the order is git checkout v1.0 first and then git checkout (don't use version in dvc checkout)
+    20. We can use artifacts of v2.0 and data of v1.0 as well, for this use below commands:
+        git checkout v2.0 (be in that version) and
+        Dvc checkout <data_file_name.dvc>
+        Dvc checkout <model_file_name.dvc>
+
